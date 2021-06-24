@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_auth',
     'django_filters',
     'api',
+    'appComunicacion',
 ]
 
 MIDDLEWARE = [

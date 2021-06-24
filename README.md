@@ -1,5 +1,9 @@
 # INNOLAB backend
 
+**Consulta Swagger**
+
+    http://localhost:8000/api/swagger/
+
 **Correr en ambiente de desarrollo**
 
     python manage.py runserver --settings=server.settings.dev
