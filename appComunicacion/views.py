@@ -26,7 +26,7 @@ class EnviarCorreoCreateView(CreateAPIView):
                 send_mail(
                     'INNOLAB - Solicitud cita',
                     text_content,
-                    'no-reply@innolab.mx',
+                    'no-reply@innolab.com.mx',
                     ['contacto@innolab.com.mx'],
                     fail_silently=False,
                 )

@@ -12,7 +12,7 @@
 
     python manage.py runserver --settings=server.settings.prod
 
-**Archivo . env**
+**Archivo .env**
 
     DATABASE_ENGINE=django.db.backends.mysql
     DATABASE_NAME=
