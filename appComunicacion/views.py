@@ -27,7 +27,7 @@ class EnviarCorreoCreateView(CreateAPIView):
                     'INNOLAB - Solicitud cita',
                     text_content,
                     'no-reply@innolab.mx',
-                    [email],
+                    ['contacto@innolab.com.mx'],
                     fail_silently=False,
                 )
             except:
