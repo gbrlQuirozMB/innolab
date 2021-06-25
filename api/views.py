@@ -8,9 +8,9 @@ from drf_yasg2 import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Semilla API",
+        title="INNOLAB API",
         default_version='v1',
-        description="Proyecto semilla",
+        description="Proyecto INNOLAB",
         # terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="gabriel@mb.company"),
         # license=openapi.License(name="BSD License"),
