@@ -4,7 +4,9 @@ from rest_framework import permissions
 
 from api.exceptions import *
 from .serializers import *
-from api.logger import log
+# from api.logger import log
+import logging
+log = logging.getLogger('django')
 
 from django.core.mail import send_mail
 
@@ -34,5 +36,5 @@ class EnviarCorreoCreateView(CreateAPIView):
                 raise ResponseError(f'Error al enviar correo', 500)
 
             return self.create(request, *args, **kwargs)
-        log.info(f'campos incorrectos: {serializer.errors}')
+        log.error(f'--->>>campos incorrectos: {serializer.errors}')
         raise ResponseBadRequest(serializer.errors)

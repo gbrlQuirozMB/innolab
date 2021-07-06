@@ -123,6 +123,55 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Django Logging Information
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '{server_time}] {message}',
+            'style': '{',
+        },
+        'personal': {
+            'format': '{asctime} - {levelname} [{pathname}:{lineno}]-> \n {message}',
+            'datefmt': '%Y-%m-%d %H:%M',
+            'style': '{',
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            # 'formatter': 'django.server',
+        },
+        'file': {
+            'level': 'INFO',
+            # 'class': 'logging.FileHandler',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'when': 'midnight',
+            'backupCount': '3',
+            'filename': 'errores.log',
+            'formatter': 'personal',
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            # 'propagate': True,
+        }
+    }
+}
 
 
 
